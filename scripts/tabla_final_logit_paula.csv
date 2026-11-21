@@ -1,0 +1,4 @@
+"Variable","Estimacion","Error_estandar","Estadistico_z","Valor_p"
+"(Intercept)",-2.323254,0.058105,-39.983907,0
+"age",0.005938,0.001361,4.363849,1.3e-05
+"balance",3.8e-05,4e-06,9.786158,0
