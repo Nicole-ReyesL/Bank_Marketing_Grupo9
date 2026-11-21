@@ -46,3 +46,47 @@ write.csv(
   "informe/resultados_mpl_robustos.csv",
   row.names = FALSE
 )
+
+banco$error_mpl <- banco$contrato - banco$prob_mpl
+
+ecm_mpl <- mean(banco$error_mpl^2)
+
+ecm_mpl
+
+resultados_ecm <- data.frame(
+  modelo = "Modelo de Probabilidad Lineal",
+  ECM = ecm_mpl
+)
+
+write.csv(
+  resultados_ecm,
+  "informe/resultados_ecm_mpl.csv",
+  row.names = FALSE
+)
+
+
+summary(modelo_mpl)$r.squared
+
+summary(modelo_mpl)$adj.r.squared
+
+
+coef(modelo_mpl)
+
+coef(modelo_mpl)["age"] * 100
+
+coef(modelo_mpl)["balance"] * 1000 * 100
+
+indicadores_mpl <- data.frame(
+  modelo = "Modelo de Probabilidad Lineal",
+  R2 = summary(modelo_mpl)$r.squared,
+  R2_ajustado = summary(modelo_mpl)$adj.r.squared,
+  ECM = ecm_mpl
+)
+
+indicadores_mpl
+
+write.csv(
+  indicadores_mpl,
+  "informe/indicadores_mpl.csv",
+  row.names = FALSE
+)
