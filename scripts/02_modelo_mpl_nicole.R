@@ -90,3 +90,20 @@ write.csv(
   "informe/indicadores_mpl.csv",
   row.names = FALSE
 )
+
+probabilidad_general <- mean(banco$contrato)
+
+ecm_basico <- mean((banco$contrato - probabilidad_general)^2)
+
+comparacion_ecm <- data.frame(
+  modelo = c("Prediccion basica", "MPL"),
+  ECM = c(ecm_basico, ecm_mpl)
+)
+
+comparacion_ecm
+
+write.csv(
+  comparacion_ecm,
+  "informe/comparacion_ecm_mpl.csv",
+  row.names = FALSE
+)
