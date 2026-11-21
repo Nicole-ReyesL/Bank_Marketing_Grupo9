@@ -107,3 +107,15 @@ write.csv(
   "informe/comparacion_ecm_mpl.csv",
   row.names = FALSE
 )
+summary(modelo_mpl)
+sum(banco$prob_mpl < 0 | banco$prob_mpl > 1)
+
+formula(modelo_mpl)
+nobs(modelo_mpl)
+
+names(banco)
+"edad" %in% names(banco)
+
+table(banco$contrato, banco$y)
+nobs(modelo_mpl)
+mean(banco$contrato)
